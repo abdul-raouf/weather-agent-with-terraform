@@ -84,8 +84,8 @@ the AWS CLI configured, and Terraform >= 1.9.
 
 `apply` outputs the API URL. Call it:
 
-[fenced block:
-  curl.exe -X POST "<api_url>" -H "Content-Type: application/json" -d "@payload.json" ]
+
+```curl.exe -X POST "<api_url>" -H "Content-Type: application/json" -d "@payload.json" ```
 
 Tear down with `terraform destroy`.
 
