@@ -15,8 +15,7 @@ the agent degrades gracefully and still responds.
 
 ## Architecture
 
-```
-mermaid
+```mermaid
 flowchart TD
     Client([Client - Postman / curl / browser])
     APIGW[API Gateway - HTTP API]
