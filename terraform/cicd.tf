@@ -15,14 +15,13 @@ resource "aws_iam_role" "cicd" {
     Statement = [{
       Effect    = "Allow"
       Principal = { Federated = aws_iam_openid_connect_provider.github.arn }
-      Action    = "sts:AssumeRoleWithWebIdentity"
+      Action    = "sts:AssumeRoleWithWebIdentity"    
       Condition = {
         StringEquals = {
           "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
         }
-        # THE repo-scoped condition — only this repo's workflows can assume the role
         StringLike = {
-          "token.actions.githubusercontent.com:sub" = "repo:abdul-raouf/weather-agent-with-terraform:*"
+          "token.actions.githubusercontent.com:sub" = "repo:abdul-raouf@*/weather-agent-with-terraform@*:*"
         }
       }
     }]
