@@ -39,7 +39,7 @@ resource "aws_iam_role_policy" "cicd" {
         Sid      = "ReadForDriftDetection"
         Effect   = "Allow"
         Action   = ["lambda:Get*", "lambda:List*", "apigateway:GET",
-                    "iam:Get*", "iam:List*", "logs:Describe*", "bedrock:Get*", "bedrock:List*"]
+                    "iam:Get*", "iam:List*", "logs:Describe*", "logs:ListTagsForResource","bedrock:Get*", "bedrock:List*"]
         Resource = "*"
       },
       {
