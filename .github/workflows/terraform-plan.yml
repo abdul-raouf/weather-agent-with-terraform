@@ -18,18 +18,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Show OIDC subject
-        run:  echo "sub is repo:${{ github.repository }}:ref:${{ github.ref }}"
-
       - name: Configure AWS credentials via OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::015275788101:role/trip-briefing-cicd-plan
           aws-region: eu-central-1
           role-skip-session-tagging: true
-    
-      - name: Show auth result
-        run: echo "outcome=${{ steps.creds.outcome }}"
 
       - uses: hashicorp/setup-terraform@v3
 
