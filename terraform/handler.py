@@ -33,7 +33,7 @@ TOOLS = [{
 
 def get_weather(latitude, longitude):
     # open-meteo: free, no API key
-    url = (f"https://api.open-meteo.com/v1/forecast?latiude={latitude}"
+    url = (f"https://api.open-meteo.com/v1/forecast?latitude={latitude}"
            f"&longitude={longitude}&daily=temperature_2m_max,temperature_2m_min,"
            f"precipitation_probability_max&forecast_days=3")
     try:
@@ -43,6 +43,8 @@ def get_weather(latitude, longitude):
         log_event(event="tool_error", tool="get_weather", error=str(e))
         # hand the failure back to Claude as data, not an exception
         return {"error": f"weather lookup failed: {e}"}
+
+
 
 def run_agent(user_text):
     messages = [{"role": "user", "content": [{"text": user_text}]}]
