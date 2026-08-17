@@ -4,13 +4,12 @@ A small agentic AI service deployed entirely on AWS, provisioned as Terraform
 infrastructure-as-code and shipped through a CI pipeline. Given a destination,
 an LLM decides whether to call a weather tool, then composes a short travel
 briefing. Built as a focused exercise in cloud deployment, IaC, and production
-concerns — not a product.
+concerns.
 
 ## What it does
 
 You POST a destination to an HTTPS endpoint. Behind it, a Lambda runs an
-agent loop against Amazon Bedrock (Claude): the model decides — per request —
-whether it needs a weather forecast, calls the `open-meteo` tool if so, and
+agent loop against Amazon Bedrock (Claude): the model decides per request whether it needs a weather forecast, calls the `open-meteo` tool if so, and
 writes a packing/planning briefing from real forecast data. If the tool fails,
 the agent degrades gracefully and still responds.
 
