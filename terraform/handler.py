@@ -46,8 +46,9 @@ def get_weather(latitude, longitude):
 
 
 
-def run_agent(user_text):
+def run_agent(user_text , return_trace=False):
     messages = [{"role": "user", "content": [{"text": user_text}]}]
+    tools_called = []
     start = time.time()
     turns = 0
 
@@ -70,14 +71,16 @@ def run_agent(user_text):
         messages.append(out)                     # keep Claude's turn in history
 
         if stop != "tool_use":
+            text = "".join(b.get("text", "") for b in out["content"])
             log_event(event="complete", turns=turns,
                       latency_ms=int((time.time() - start) * 1000))
-            return "".join(b.get("text", "") for b in out["content"])
+            return (text, {"tools_called": tools_called, "turns": turns}) if return_trace else text
 
         # Claude asked for a tool -> execute it and feed the result back
         for block in out["content"]:
             if "toolUse" in block:
                 tu = block["toolUse"]
+                tools_called.append(tu["name"])
                 log_event(event = "tool_use", tool = tu["name"], input = tu["input"])
                 result = get_weather(**tu["input"])
                 messages.append({"role": "user", "content": [{

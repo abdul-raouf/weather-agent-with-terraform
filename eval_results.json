@@ -1,0 +1,77 @@
+{
+  "score": 0.8333333333333334,
+  "results": [
+    {
+      "id": "weather_explicit",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "weather_implicit",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "id": "no_tool_flight",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "no_tool_visa",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "no_tool_greeting",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "ambiguous_no_date",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "climate_not_forecast",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "far_future",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "past_weather",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "id": "indirect_need",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    },
+    {
+      "id": "multi_city",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    },
+    {
+      "id": "fictional_place",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    }
+  ]
+}

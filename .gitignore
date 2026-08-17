@@ -13,3 +13,5 @@ terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/5.100.0/windo
 terraform/.terraform/*
 venv/*
 temp/*
+terraform/eval/run_eval.py
+terraform/__pycache__/handler.cpython-311.pyc

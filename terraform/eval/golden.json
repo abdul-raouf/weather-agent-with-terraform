@@ -1,0 +1,14 @@
+[
+  {"id": "weather_explicit", "text": "I am in Lisbon this Saturday and Sunday, what should I pack?", "expect_tool": true},
+  {"id": "weather_implicit", "text": "Heading to Oslo in two days — what should I bring?", "expect_tool": true},
+  {"id": "no_tool_flight", "text": "What is the flight status of Emirates EK123?", "expect_tool": false},
+  {"id": "no_tool_visa", "text": "Do I need a visa for Portugal as a UAE resident?", "expect_tool": false},
+  {"id": "no_tool_greeting", "text": "Hello, what can you do?", "expect_tool": false},
+  {"id": "ambiguous_no_date", "text": "I'm going to Lisbon sometime.", "expect_tool": false},
+  {"id": "climate_not_forecast", "text": "What's the climate like in Dubai generally?", "expect_tool": false},
+  {"id": "far_future", "text": "I'm going to Islamabad in six months, what should I pack?", "expect_tool": false},
+  {"id": "past_weather", "text": "What was the weather in Lisbon last month?", "expect_tool": false},
+  {"id": "indirect_need", "text": "Should I bring an umbrella to Amsterdam tomorrow?", "expect_tool": true},
+  {"id": "multi_city", "text": "Lisbon Friday then Madrid Sunday — packing advice?", "expect_tool": true},
+  {"id": "fictional_place", "text": "What should I pack for Wakanda next week?", "expect_tool": false}
+]
